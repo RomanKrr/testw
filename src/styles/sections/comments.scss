@@ -1,0 +1,93 @@
+@import '../base/vars';
+@import '../base/mixins';
+@import '../base/reset';
+@import '../base/base';
+
+
+.comments {
+    padding: 60px 0;
+
+    &__title {
+        color: #333;
+        margin-bottom: 40px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        background: $black;
+        border-radius: 40px;
+        padding: 30px;
+        position: relative;
+    }
+
+    &__card {
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 350px;
+        text-align: left;
+        transition: transform 0.3s ease;
+        position: relative;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        &-text {
+            color: $white;
+            margin-bottom: 20px;
+        }
+
+        &-info {
+            padding-top: 15px;
+        }
+
+        &-name {
+            color: $white;
+        }
+
+        &-position {
+            color: #777;
+            font-style: italic;
+        }
+
+
+    }
+
+    .quote {
+        position: absolute;
+        top: 10%;
+        left: -10%;
+    }
+
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+    .left {
+        left: 1%;
+        transform: translateY(-50%) scaleX(-1);
+    }
+
+    .right {
+        right: 1%;
+    }
+}
+
+// Адаптив для мобільних пристроїв
+@media (max-width: 768px) {
+    .comments__list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .comments__card {
+        width: 90%;
+    }
+}
